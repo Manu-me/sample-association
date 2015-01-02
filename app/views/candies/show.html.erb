@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @candy.name %>
+</p>
+
+<p>
+  <strong>Kid:</strong>
+  <%= @candy.kid.name %>
+</p>
+
+<%= link_to 'Edit', edit_kid_candy_path(@kid,@candy) %> |<%= link_to "Delete" ,kid_candy_path(@kid,@candy), method: :delete %>|
+<%= link_to 'Back', kid_path(@kid) %>

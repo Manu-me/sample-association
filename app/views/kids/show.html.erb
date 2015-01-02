@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @kid.name %>
+</p>
+
+<%= link_to 'Edit', edit_kid_path(@kid) %> |
+<%= link_to 'Back', kids_path %>
+
+|
+<%= link_to " New Candy ", new_kid_candy_path(@kid) %>
+<h2>Candies</h2>
+
+
+<%if @kid.candies.count == 0 %>
+  no stock
+<% else %>
+<ul>
+
+  <% @kid.candies.each do |candy| %>
+  	<li><%= link_to candy.name ,kid_candy_path(@kid,candy)%>  	</li>
+  
+  <% end %>
+</ul>
+
+	
+  <% end %>
